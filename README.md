@@ -13,6 +13,26 @@ New York City traffic crashes. It:
 
 The project was developed by **Vishal Nagamalla** and **Pranav Patil** for a course project in database management and data mining.
 
+## Datasets
+
+To reproduce the project, download the following public datasets and save them locally:
+
+- **NYC Motor Vehicle Collisions, Crashes**  \
+  NYC Open Data dataset: https://data.cityofnewyork.us/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95
+
+- **New York City Daily Weather**  \
+  Kaggle dataset "NYC Weather - 2016 to 2022": https://www.kaggle.com/datasets/aadimator/nyc-weather-2016-to-2022
+
+After downloading, create the following folder structure in the project root and place the CSV files inside:
+
+```text
+data/raw/
+    nyc_crashes.csv
+    nyc_weather_daily.csv
+```
+
+Make sure the filenames match the paths configured in `config.py`.
+
 ## Setup
 
 ### 1. Python environment
@@ -149,21 +169,22 @@ python ml_pipeline.py
 
 ## How to Reproduce
 
-1. Create the `traffic_db` PostgreSQL database and update `config.py` with your username.
-2. Run:
+1. Download the crash and weather datasets listed in the Datasets section above and place them under `data/raw/` with the names `nyc_crashes.csv` and `nyc_weather_daily.csv`.
+2. Create the `traffic_db` PostgreSQL database and update `config.py` with your username.
+3. Run:
 
    ```bash
    psql traffic_db -f schema.sql
    python etl.py
    ```
 
-3. Run hotspot queries:
+4. Run hotspot queries:
 
    ```bash
    psql traffic_db -f sql_queries.sql
    ```
 
-4. Run the ML pipeline:
+5. Run the ML pipeline:
 
    ```bash
    python ml_pipeline.py
