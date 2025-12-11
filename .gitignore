@@ -1,0 +1,15 @@
+traffic_env/
+venv/
+.env/
+.venv/
+
+.ipynb_checkpoints/
+
+.vscode/
+
+.DS_Store
+
+*.log
+*.tmp
+
+data/raw/
