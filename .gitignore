@@ -2,6 +2,7 @@ traffic_env/
 venv/
 .env/
 .venv/
+.conda/
 
 .ipynb_checkpoints/
 
@@ -13,3 +14,7 @@ venv/
 *.tmp
 
 data/raw/
+
+__pycache__/
+*.py[cod]
+*.pyo

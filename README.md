@@ -167,6 +167,16 @@ python ml_pipeline.py
    - **Random Forest**
 6. Prints scikit-learn classification reports and confusion matrices for each model.
 
+## Figures and Visualizations
+
+To recreate the plots used in the report, run `python make_figures.py` from the project root after the ETL pipeline has been executed.
+
+The script connects to the PostgreSQL database defined in `config.py`, reads the accidents and weather data, and writes the following image files under a `figures/` directory:
+
+- `figures/hourly_accidents.png` – bar chart of total crashes by hour of day.
+- `figures/borough_severity.png` – bar chart of the serious-crash rate by borough.
+- `figures/model_performance.png` – bar chart comparing precision and recall for the serious-crash class (class 1) across the Logistic Regression and Random Forest models.
+
 ## How to Reproduce
 
 1. Download the crash and weather datasets listed in the Datasets section above and place them under `data/raw/` with the names `nyc_crashes.csv` and `nyc_weather_daily.csv`.
